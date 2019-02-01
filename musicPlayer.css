@@ -1,0 +1,61 @@
+body
+		{
+			background: #fle7ee;
+		}
+		.container
+		{
+			width: 450px;
+			height: 135px;
+			background-color: grey;
+			box-shadow: 0 0 6px 2px #c7a8a8;
+			color: red;
+			font-family: verdana;
+			font-size: 20px;
+		}
+		.logo
+		{
+			width: 150px;
+			height: 150px;
+			float: left;
+		}
+		.player
+		{
+			float: right;
+			margin: 7px;
+		}
+		.songtitle{
+			width: 300px;
+			padding-right: 5px 0px 5px 0px;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+
+		}
+		.songslider{
+			width: 300px;
+		}
+		.currenttime
+		{
+			float: right;
+			font-size: 10px;
+		}
+		.duration
+		{
+			float: right;
+			font-size: 10px;
+		}
+		.controllers
+		{
+			clear: both;
+			vertical-align: middle;
+			margin-right: 2px;
+		}
+		
+		.volumeSlider
+		{
+			width: 90px;
+			margin-left: 5px;
+		}
+		.volume-slider-up {
+			vertical-align: middle;
+		}
