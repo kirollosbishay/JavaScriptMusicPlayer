@@ -23,7 +23,7 @@ body
 			float: right;
 			margin: 7px;
 		}
-		.songtitle{
+		.songTitle{
 			width: 300px;
 			padding-right: 5px 0px 5px 0px;
 			white-space: nowrap;
@@ -31,10 +31,10 @@ body
 			overflow: hidden;
 
 		}
-		.songslider{
+		.songSlider{
 			width: 300px;
 		}
-		.currenttime
+		.currentTime
 		{
 			float: right;
 			font-size: 10px;

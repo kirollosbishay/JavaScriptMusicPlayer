@@ -1,7 +1,7 @@
 var songs = ["Adele - Hello.mp3","Stereo Hearts.mp3","Tarabyon.com_Amr Diab - 03.We_Hatebtady.mp3","What Makes You Beautiful.mp3"];
-var songTitle = document.getElementById('songtitle');
-var songSlider = document.getElementById("songslider");
-var currentTime = document.getElementById("currenttime");
+var songTitle = document.getElementById('songTitle');
+var songSlider = document.getElementById("songSlider");
+var currentTime = document.getElementById("currentTime");
 var duration = document.getElementById("duration");
 var volumeSlider = document.getElementById("volumeSlider");
 var nextSongTitle = document.getElementById("nextSong");
@@ -23,10 +23,10 @@ function updateSongSlider () {
 	songSlider.value = c;
 	currentTime.textContent = convertTime(c);
 }
-function convertTime () {
+function convertTime (secs) {
 	// body... 
-	var min = Math.floor(sec/60);
-	var sec = sec % 60;
+	var min = Math.floor(secs/60);
+	var sec = secs % 60;
 	min = (min<10) ? "0" + min : min;
 	sec = ( sec < 10) ? "0" + sec : sec;
 	return (min + ":" + sec);
@@ -57,7 +57,7 @@ function previous () {
 	currentSong = (currentSong <0 )? songs.length -1 : currentSong; 
 	loadSong();
 }
-function seeksong () {
+function seekSong () {
 	// body... 
 	song.currentTime = songSlider.value;
 	currentTime.textContent = currentTime(song.currentTime);
