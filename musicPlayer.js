@@ -35,7 +35,7 @@ function showDuration(){
 	var d = Math.floor(song.duration);
 	songSlider.setAttribute("max", d);
 }
-var img = document.getElementById("play")
+// var img = document.getElementById("play")
 function playOrPause (img) {
 	// body... 
 	song.playbackRate =1;
@@ -50,6 +50,7 @@ function playOrPause (img) {
 function next() {
 	// body... 
 	currentSong = currentSong +1 % songs.length;
+	loadSong();
 }
 function previous () {
 	// body...
