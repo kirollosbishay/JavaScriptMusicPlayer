@@ -5,8 +5,13 @@ var currentTime = document.getElementById("currentTime");
 var duration = document.getElementById("duration");
 var volumeSlider = document.getElementById("volumeSlider");
 var nextSongTitle = document.getElementById("nextSong");
+var shuffleButton = document.getElementById("shuffle")
+var repeatButton = document.getElementById("repeat")
+var repeat = false;
+var shuffle = false;
 var song = new Audio();
 var currentSong=0;
+var randNO = [Math.floor(Math.random() * songs.length)];
 window.onload = loadSong;
 function loadSong () {
 	song.src="songs/" + songs[currentSong];
@@ -15,7 +20,11 @@ function loadSong () {
 	nextSongTitle.innerHTML = "<b>next song</b>" + songs[currentSong+1 % songs.length];
 	song.play();
 	setTimeout(showDuration, 1000)
-	//song.volume = volumeSlider.value;
+	if(currentSong>=songs.length && repeat==true){
+		currentSong=0;
+	}
+	// song.volume = volumeSlider.value;
+	song.addEventListener("ended", next );
 }
 setInterval(updateSongSlider, 1000);
 
@@ -77,3 +86,33 @@ function decreasePlaybackRate () {
 	// body... 
 	song.playbackRate -= 0.5;
 }
+
+shuffleButton.addEventListener('click', function(){
+	if ( shuffle== false){
+
+	shuffleButton.style.backgroundColor="Red";
+	song.pause();
+	currentSong=randNO;
+  	loadSong();
+  	song.play();
+  	randNO = [Math.floor(Math.random() * songs.length)];
+
+  	shuffle = true;
+  }else if ( shuffle == true)
+  {
+	shuffleButton.style.backgroundColor="Green";
+
+  }
+ 
+});
+repeatButton.addEventListener("click", function(){
+	if (repeat ==false){
+	repeatButton.style.backgroundColor="Red";
+	repeat = true;
+	currentSong = 0;
+	loadSong();
+}else if (repeat = true){
+	repeatButton.style.backgroundColor="Green";
+
+}
+})

@@ -59,3 +59,10 @@ body
 		.volume-slider-up {
 			vertical-align: middle;
 		}
+		#shuffle{
+			background-color: Green;
+		}
+		#repeat{
+			background-color: Green;
+
+		}
