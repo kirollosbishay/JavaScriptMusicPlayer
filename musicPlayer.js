@@ -13,8 +13,9 @@ function loadSong () {
 	songTitle.textContent = (currentSong+1)+"."+songs[currentSong];
 	song.playbackRate =1;
 	nextSongTitle.innerHTML = "<b>next song</b>" + songs[currentSong+1 % songs.length];
-	song.volume = volumeSlider.value;
 	song.play();
+	setTimeout(showDuration, 1000)
+	//song.volume = volumeSlider.value;
 }
 setInterval(updateSongSlider, 1000);
 
